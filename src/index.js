@@ -5,7 +5,7 @@ window.Promise = window.Promise || require('promise-polyfill');
 // Check before the polyfill runs.
 window.hasNativeWebVRImplementation = !!window.navigator.getVRDisplays ||
                                       !!window.navigator.getVRDevices;
-window.hasNativeWebXRImplementation = navigator.xr !== undefined;
+window.hasNativeWebXRImplementation = navigator.xr && navigator.xr.requestDevice;
 
 // If native WebXR or WebVR are defined WebVRPolyfill does not initialize.
 if (!window.hasNativeWebXRImplementation && !window.hasNativeWebVRImplementation) {
@@ -89,7 +89,7 @@ require('./core/a-mixin');
 require('./extras/components/');
 require('./extras/primitives/');
 
-console.log('A-Frame Version: 0.9.2 (Date 2019-05-06, Commit #f57a1fa)');
+console.log('A-Frame Version: 0.9.2 (Date 2019-12-13, Commit #fa14bda3)');
 console.log('three Version (https://github.com/supermedium/three.js):',
             pkg.dependencies['super-three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);

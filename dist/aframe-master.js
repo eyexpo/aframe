@@ -77092,7 +77092,7 @@ _dereq_('./core/a-mixin');
 _dereq_('./extras/components/');
 _dereq_('./extras/primitives/');
 
-console.log('A-Frame Version: 0.9.2 (Date 2019-12-13, Commit #fa14bda3)');
+console.log('A-Frame Version: 0.9.2 (Date 2019-12-13, Commit #508001da)');
 console.log('three Version (https://github.com/supermedium/three.js):',
             pkg.dependencies['super-three']);
 console.log('WebVR Polyfill Version:', pkg.dependencies['webvr-polyfill']);
@@ -79143,7 +79143,7 @@ if (navigator.xr && navigator.xr.requestDevice) {
   }
 }
 
-module.exports.isWebXRAvailable = navigator.xr !== undefined;
+module.exports.isWebXRAvailable = navigator.xr !== undefined && navigator.xr.requestDevice !==undefined;
 
 function getVRDisplay () { return vrDisplay; }
 module.exports.getVRDisplay = getVRDisplay;

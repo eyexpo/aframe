@@ -35,7 +35,7 @@ if (navigator.xr && navigator.xr.requestDevice) {
   }
 }
 
-module.exports.isWebXRAvailable = navigator.xr !== undefined;
+module.exports.isWebXRAvailable = navigator.xr !== undefined && navigator.xr.requestDevice !== undefined;
 
 function getVRDisplay () { return vrDisplay; }
 module.exports.getVRDisplay = getVRDisplay;
